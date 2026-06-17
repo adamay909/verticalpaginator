@@ -9,7 +9,9 @@
 
 ```vpUI.js```はページ送りなどを可能にするための設定。
 
-この２つで一応動きます。```skeleton.html```の```<template>```のなかに変換したいHTMLをペーストすれば準備完了です。あとはサーバーで配信すればOKです。例を２つ```docs/```フォルダに入れてあります。```paginator.css```は必須です。
+この２つで一応動きます。```skeleton.html```の```<template>```のなかに変換したいHTMLをペーストすれば準備完了です。あとはサーバーで配信すればOKです。例を２つ```docs/```フォルダに入れてあります。[https://adamay909.github.io/verticalpaginator/](https://adamay909.github.io/verticalpaginator/)　から表示できます。
+
+```paginator.css```は必須です。
 
 ```vpPresistence.js```は変換したものをindexDBに保存したり、読書位置を記憶する機能を提供します。
 
