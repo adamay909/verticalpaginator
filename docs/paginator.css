@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --viewerWidth: min(420px, calc(100svw - 60px));
+  --viewerHeight: min(640px, calc(95svh - 60px));
+ }
+
+ body {
+  overscroll-behavior: none;
+}
+
+/* ── VERTICAL READER ── */
+.vertical-reader {
+  height: calc(95svh - 24px);
+  display: grid;
+  place-items: center;
+  font-family: var(--readingFont);
+  position: relative;
+  background-color: var(--main-reading-bg);
+  overscroll-behavior: none;
+}
+
+.page-window {
+  width: var(--viewerWidth);
+  height: var(--viewerHeight);
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: visible;
+  overscroll-behavior: none;
+}
+
+.showOutline {
+ outline: solid 1px;
+}
+
+#pageWindow.debug {
+  border: solid 1px;
+ }
+
+.page-strip {
+  height: var(--viewerHeight);
+  display: flex;
+  flex-direction: row-reverse;
+  overscroll-behavior: none;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.pageStrip::-webkit-scrollbar {
+  display: none;
+}
+
+.page {
+  width: var(--viewerWidth);
+  height: var(--viewerHeight);
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  contain: strict;
+  writing-mode: vertical-rl;
+  text-align: justify;
+  overscroll-behavior: none;
+  display: grid;
+  place-items: center;
+}
+
+.page-body {
+  width: var(--viewerWidth);
+  height: var(--viewerHeight);
+  writing-mode: vertical-rl;
+  text-align: justify;
+  overscroll-behavior: none;
+}
+
+/* seek bar */
+.seek-bar {
+  width: calc(100% - 48px);
+  margin-left: 24px;
+  margin-right: 24px;
+  height: 28px;
+  border-top: 1px solid currentColor;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+#busyPaginating {
+  display: none;
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  position: relative;
+  opacity: 0.5;
+  width: calc(100% - 72px);
+}
+
+#busyIndicator {
+width: calc(100% - 72px - 7em);
+}
+
+#pageTrack {
+ flex: 1;
+}
+
+#readingPosition {
+ accent-color: grey;
+ width: 100%;
+ direction: rtl;
+ opacity: 0.8;
+}
+
+.seek-label {
+  font-size: var(--smallFont);
+  opacity: 0.9;
+  white-space: nowrap;
+  min-width: 36px;
+  text-align: right;
+  margin-left: 1em;
+}
+
+#page00.showoverflow {
+ border: solid 2px red;
+}
+/*SANDBOX*/
+
+#paginationSandbox {
+ writing-mode: vertical-rl;
+ text-align:start;
+ position: fixed;
+ top: 0px;
+ left: 0px; 
+ width: var(--viewerWidth);
+ height: var(--viewerHeight);
+ padding: 0;
+ box-sizing: border-box;
+ visibility: hidden;
+ pointer-events: none;
+ z-index: -1;
+} 
+
+.vpSandbox {
+ display: none;
+}
+
+.vpBlock {
+ display: none;
+}
+
+.vpShow {
+ display: block;
+}
+

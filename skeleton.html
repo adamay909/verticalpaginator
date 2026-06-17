@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>縦書きページ分割</title>
+    <link rel="stylesheet" href="paginator.css" />
+    <link rel="stylesheet" href="aozora.css" />
+  </head>
+
+  <body>
+    <div class="vertical-reader" id="verticalReader">
+      <div class="page-window" id="pageWindow">
+        <div class="page-strip" id="pageStrip"></div>
+      </div>
+
+      <div class="seek-bar" id="seekBar">
+        <div id="busyPaginating">
+          <label>組版作業中:<progress id="busyIndicator"></progress></label>
+        </div>
+        <div id="pageTrack">
+          <input
+            type="range"
+            id="readingPosition"
+            min="0"
+            max="1"
+            value="0"
+            name="readingPosition"
+          />
+        </div>
+        <div>
+          <span class="seek-label" id="seekLabel">— / —</span>
+        </div>
+      </div>
+    </div>
+
+
+    <template id="documentContent">
+    
+	</template>
+    <script type="module">
+      import { paginate } from "./vpcore.js";
+
+      import {
+        goToPage,
+        attachListeners,
+        resetUI,
+      } from "./vpUI.js";
+
+      paginate().then(() => {
+      resetUI();
+      attachListeners();
+      goToPage(0);
+	  });
+    </script>
+  </body>
+</html>
