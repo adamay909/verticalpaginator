@@ -33,24 +33,17 @@
       </div>
     </div>
 
-
-    <template id="documentContent">
-    
-	</template>
+    <template id="documentContent"> </template>
     <script type="module">
       import { paginate } from "./vpcore.js";
 
-      import {
-        goToPage,
-        attachListeners,
-        resetUI,
-      } from "./vpUI.js";
+      import { goToPage, attachListeners, resetUI } from "./vpUI.js";
 
       paginate().then(() => {
-      resetUI();
-      attachListeners();
-      goToPage(0);
-	  });
+        resetUI();
+        attachListeners();
+        goToPage(0);
+      });
     </script>
   </body>
 </html>

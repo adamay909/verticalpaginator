@@ -8,9 +8,9 @@
 :root {
   --viewerWidth: min(420px, calc(100svw - 60px));
   --viewerHeight: min(640px, calc(95svh - 60px));
- }
+}
 
- body {
+body {
   overscroll-behavior: none;
 }
 
@@ -35,12 +35,12 @@
 }
 
 .showOutline {
- outline: solid 1px;
+  outline: solid 1px;
 }
 
 #pageWindow.debug {
   border: solid 1px;
- }
+}
 
 .page-strip {
   height: var(--viewerHeight);
@@ -100,18 +100,18 @@
 }
 
 #busyIndicator {
-width: calc(100% - 72px - 7em);
+  width: calc(100% - 72px - 7em);
 }
 
 #pageTrack {
- flex: 1;
+  flex: 1;
 }
 
 #readingPosition {
- accent-color: grey;
- width: 100%;
- direction: rtl;
- opacity: 0.8;
+  accent-color: grey;
+  width: 100%;
+  direction: rtl;
+  opacity: 0.8;
 }
 
 .seek-label {
@@ -124,34 +124,33 @@ width: calc(100% - 72px - 7em);
 }
 
 #page00.showoverflow {
- border: solid 2px red;
+  border: solid 2px red;
 }
 /*SANDBOX*/
 
 #paginationSandbox {
- writing-mode: vertical-rl;
- text-align:start;
- position: fixed;
- top: 0px;
- left: 0px; 
- width: var(--viewerWidth);
- height: var(--viewerHeight);
- padding: 0;
- box-sizing: border-box;
- visibility: hidden;
- pointer-events: none;
- z-index: -1;
-} 
+  writing-mode: vertical-rl;
+  text-align: start;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: var(--viewerWidth);
+  height: var(--viewerHeight);
+  padding: 0;
+  box-sizing: border-box;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
 
 .vpSandbox {
- display: none;
+  display: none;
 }
 
 .vpBlock {
- display: none;
+  display: none;
 }
 
 .vpShow {
- display: block;
+  display: block;
 }
-

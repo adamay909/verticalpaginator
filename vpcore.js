@@ -162,7 +162,7 @@ function toBlocks(src) {
         break;
     }
   }
-      closePreviousBlock();
+  closePreviousBlock();
 
   //HOISTED FUNCTIONS
   function closePreviousBlock() {
@@ -320,7 +320,7 @@ async function getPageRanges(render = true) {
     }
     sandbox.children[num].classList.add("vpShow");
     //wait for reflow
-     sleep(1);
+    sleep(1);
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {});
     });

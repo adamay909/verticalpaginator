@@ -1,12 +1,14 @@
 //import { saveState } from "./vpPersistence.js";
-let saveState
-try{
-const vpp = await import('./vpPersistence.js')
-saveState = vpp.saveState
-} catch(e) {
- console.log(e)
-console.log("vpPersistence.js not available. Won't be able to save reading position")
-};
+let saveState;
+try {
+  const vpp = await import("./vpPersistence.js");
+  saveState = vpp.saveState;
+} catch (e) {
+  console.log(e);
+  console.log(
+    "vpPersistence.js not available. Won't be able to save reading position",
+  );
+}
 
 let current = 0;
 let isAnimating = false;
@@ -61,8 +63,8 @@ function updateUI(idx) {
   const page = idx + 1;
   seekLabel.textContent = page + "/" + total;
   if (saveState) {
-   saveState(docId, current)
-  };
+    saveState(docId, current);
+  }
 }
 
 function pageElemOf(idx) {
@@ -232,7 +234,6 @@ export function detachListeners() {
 
   handlers = null; // allow re-attach later
 }
-
 
 export function setDocID(id) {
   docId = id;

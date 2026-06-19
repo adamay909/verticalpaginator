@@ -25,9 +25,9 @@ export async function initAozoraReader(id) {
   initialize();
   setupTOC();
   addEventHandlers();
-   requestAnimationFrame(() => {
-      requestAnimationFrame(() => {});
-    });
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {});
+  });
 }
 
 window.initAozoraReader = initAozoraReader;
