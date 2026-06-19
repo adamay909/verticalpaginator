@@ -1,4 +1,12 @@
-import { saveState } from "./vpPersistence.js";
+//import { saveState } from "./vpPersistence.js";
+let saveState
+try{
+const vpp = await import('./vpPersistence.js')
+saveState = vpp.saveState
+} catch(e) {
+ console.log(e)
+console.log("vpPersistence.js not available. Won't be able to save reading position")
+};
 
 let current = 0;
 let isAnimating = false;
@@ -52,7 +60,9 @@ function updateUI(idx) {
   readingPosition.value = current;
   const page = idx + 1;
   seekLabel.textContent = page + "/" + total;
-  saveState(docId, current);
+  if (saveState) {
+   saveState(docId, current)
+  };
 }
 
 function pageElemOf(idx) {
