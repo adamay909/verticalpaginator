@@ -35,6 +35,10 @@ export function getCurrentPage() {
   return current;
 }
 
+export function setCurrentPage(page) {
+	current = page;
+}
+
 export function resetUI() {
   pageWindow = document.getElementById("pageWindow");
   pageStrip = document.getElementById("pageStrip");

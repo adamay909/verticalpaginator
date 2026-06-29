@@ -5,6 +5,7 @@ import {
   resetUI,
   setDocID,
   getCurrentPage,
+  setCurrentPage,
 } from "./vpUI.js";
 import * as vpp from "./vpPersistence.js";
 
@@ -18,6 +19,7 @@ export async function initReader(docId) {
   await waitForData();
   const restored = await vpp.loadPaginatedDoc(docId);
   let current = 0;
+  setCurrentPage(current);
   if (restored) {
     //found previous data
     pageStrip = document.getElementById("pageStrip");
@@ -25,8 +27,8 @@ export async function initReader(docId) {
     resetUI();
     setDocID(docId);
     attachListeners();
-    current = await vpp.loadSavedPage(docId);
-    goToPage(current);
+    const targetPage = await vpp.loadSavedPage(docId);
+    goToPage(targetPage);
     setPageRanges();
     return;
   }
